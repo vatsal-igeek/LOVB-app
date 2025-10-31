@@ -90,7 +90,8 @@ export default function PlayerList() {
     if (sortBy === 'name') {
       filtered.sort((a, b) => a.name.localeCompare(b.name));
     } else if (sortBy === 'creditCost') {
-      filtered.sort((a, b) => a.creditCost - b.creditCost);
+      // Sort by credit cost: highest to lowest
+      filtered.sort((a, b) => b.creditCost - a.creditCost);
     }
 
     setFilteredPlayers(filtered);
