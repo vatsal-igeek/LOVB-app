@@ -95,9 +95,13 @@ export default function TeamBuilder() {
               {/* Front row */}
               <View style={styles.courtRow}>
                 {/* OH - Outside Hitter */}
-                <View style={styles.courtPosition}>
+                <View style={styles.courtPositionWrapper}>
                   <View style={styles.jersey}>
-                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyTop}>
+                      <View style={styles.jerseySleeve} />
+                      <View style={styles.jerseyCollar} />
+                      <View style={styles.jerseySleeve} />
+                    </View>
                     <View style={styles.jerseyBody}>
                       {lineup.outsideHitter ? (
                         <Text style={styles.jerseyNumber}>{lineup.outsideHitter.jerseyNumber}</Text>
@@ -108,9 +112,13 @@ export default function TeamBuilder() {
                   </View>
                 </View>
                 {/* MB - Middle Blocker */}
-                <View style={styles.courtPosition}>
+                <View style={styles.courtPositionWrapper}>
                   <View style={styles.jersey}>
-                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyTop}>
+                      <View style={styles.jerseySleeve} />
+                      <View style={styles.jerseyCollar} />
+                      <View style={styles.jerseySleeve} />
+                    </View>
                     <View style={styles.jerseyBody}>
                       {lineup.middleBlocker ? (
                         <Text style={styles.jerseyNumber}>{lineup.middleBlocker.jerseyNumber}</Text>
@@ -121,9 +129,13 @@ export default function TeamBuilder() {
                   </View>
                 </View>
                 {/* OPP - Opposite Hitter */}
-                <View style={styles.courtPosition}>
+                <View style={styles.courtPositionWrapper}>
                   <View style={styles.jersey}>
-                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyTop}>
+                      <View style={styles.jerseySleeve} />
+                      <View style={styles.jerseyCollar} />
+                      <View style={styles.jerseySleeve} />
+                    </View>
                     <View style={styles.jerseyBody}>
                       {lineup.oppositeHitter ? (
                         <Text style={styles.jerseyNumber}>{lineup.oppositeHitter.jerseyNumber}</Text>
@@ -137,9 +149,13 @@ export default function TeamBuilder() {
               {/* Back row */}
               <View style={styles.courtRow}>
                 {/* L - Libero */}
-                <View style={styles.courtPosition}>
+                <View style={styles.courtPositionWrapper}>
                   <View style={styles.jersey}>
-                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyTop}>
+                      <View style={styles.jerseySleeve} />
+                      <View style={styles.jerseyCollar} />
+                      <View style={styles.jerseySleeve} />
+                    </View>
                     <View style={styles.jerseyBody}>
                       {lineup.libero ? (
                         <Text style={styles.jerseyNumber}>{lineup.libero.jerseyNumber}</Text>
@@ -150,9 +166,13 @@ export default function TeamBuilder() {
                   </View>
                 </View>
                 {/* S - Setter */}
-                <View style={styles.courtPosition}>
+                <View style={styles.courtPositionWrapper}>
                   <View style={styles.jersey}>
-                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyTop}>
+                      <View style={styles.jerseySleeve} />
+                      <View style={styles.jerseyCollar} />
+                      <View style={styles.jerseySleeve} />
+                    </View>
                     <View style={styles.jerseyBody}>
                       {lineup.setter ? (
                         <Text style={styles.jerseyNumber}>{lineup.setter.jerseyNumber}</Text>
@@ -163,9 +183,13 @@ export default function TeamBuilder() {
                   </View>
                 </View>
                 {/* DS - Defensive Specialist */}
-                <View style={styles.courtPosition}>
+                <View style={styles.courtPositionWrapper}>
                   <View style={styles.jersey}>
-                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyTop}>
+                      <View style={styles.jerseySleeve} />
+                      <View style={styles.jerseyCollar} />
+                      <View style={styles.jerseySleeve} />
+                    </View>
                     <View style={styles.jerseyBody}>
                       {lineup.defensiveSpecialist ? (
                         <Text style={styles.jerseyNumber}>{lineup.defensiveSpecialist.jerseyNumber}</Text>
