@@ -94,26 +94,74 @@ export default function TeamBuilder() {
             <View style={styles.courtGrid}>
               {/* Front row */}
               <View style={styles.courtRow}>
+                {/* OH - Outside Hitter */}
                 <View style={styles.courtPosition}>
-                  <Text style={styles.positionDot}>OH</Text>
+                  {lineup.outsideHitter?.imageBase64 ? (
+                    <Image
+                      source={{ uri: `data:image/jpeg;base64,${lineup.outsideHitter.imageBase64}` }}
+                      style={styles.courtPlayerImage}
+                    />
+                  ) : (
+                    <Text style={styles.positionDot}>OH</Text>
+                  )}
                 </View>
+                {/* MB - Middle Blocker */}
                 <View style={styles.courtPosition}>
-                  <Text style={styles.positionDot}>MB</Text>
+                  {lineup.middleBlocker?.imageBase64 ? (
+                    <Image
+                      source={{ uri: `data:image/jpeg;base64,${lineup.middleBlocker.imageBase64}` }}
+                      style={styles.courtPlayerImage}
+                    />
+                  ) : (
+                    <Text style={styles.positionDot}>MB</Text>
+                  )}
                 </View>
+                {/* OPP - Opposite Hitter */}
                 <View style={styles.courtPosition}>
-                  <Text style={styles.positionDot}>OPP</Text>
+                  {lineup.oppositeHitter?.imageBase64 ? (
+                    <Image
+                      source={{ uri: `data:image/jpeg;base64,${lineup.oppositeHitter.imageBase64}` }}
+                      style={styles.courtPlayerImage}
+                    />
+                  ) : (
+                    <Text style={styles.positionDot}>OPP</Text>
+                  )}
                 </View>
               </View>
               {/* Back row */}
               <View style={styles.courtRow}>
+                {/* L - Libero */}
                 <View style={styles.courtPosition}>
-                  <Text style={styles.positionDot}>L</Text>
+                  {lineup.libero?.imageBase64 ? (
+                    <Image
+                      source={{ uri: `data:image/jpeg;base64,${lineup.libero.imageBase64}` }}
+                      style={styles.courtPlayerImage}
+                    />
+                  ) : (
+                    <Text style={styles.positionDot}>L</Text>
+                  )}
                 </View>
+                {/* S - Setter */}
                 <View style={styles.courtPosition}>
-                  <Text style={styles.positionDot}>S</Text>
+                  {lineup.setter?.imageBase64 ? (
+                    <Image
+                      source={{ uri: `data:image/jpeg;base64,${lineup.setter.imageBase64}` }}
+                      style={styles.courtPlayerImage}
+                    />
+                  ) : (
+                    <Text style={styles.positionDot}>S</Text>
+                  )}
                 </View>
+                {/* DS - Defensive Specialist */}
                 <View style={styles.courtPosition}>
-                  <Text style={styles.positionDot}>DS</Text>
+                  {lineup.defensiveSpecialist?.imageBase64 ? (
+                    <Image
+                      source={{ uri: `data:image/jpeg;base64,${lineup.defensiveSpecialist.imageBase64}` }}
+                      style={styles.courtPlayerImage}
+                    />
+                  ) : (
+                    <Text style={styles.positionDot}>DS</Text>
+                  )}
                 </View>
               </View>
             </View>
