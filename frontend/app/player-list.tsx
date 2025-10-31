@@ -98,6 +98,29 @@ export default function PlayerList() {
 
   const handleSelectPlayer = (player: Player) => {
     if (params.position) {
+      // Calculate the cost of adding this player
+      const currentPlayer = lineup[params.position as keyof typeof lineup];
+      let currentCost = 0;
+      
+      // If there's already a player in this position, we'll get their cost back
+      if (currentPlayer && typeof currentPlayer === 'object' && 'creditCost' in currentPlayer) {
+        currentCost = currentPlayer.creditCost;
+      }
+      
+      // Calculate what the new total would be
+      const newTotal = lineup.creditsUsed - currentCost + player.creditCost;
+      
+      // Check if the new total exceeds the budget
+      if (newTotal > 100) {
+        const availableCredits = 100 - (lineup.creditsUsed - currentCost);
+        Alert.alert(
+          'Budget Exceeded',
+          `You don't have enough credits to select this player.\n\nPlayer Cost: ${player.creditCost} credits\nAvailable Credits: ${availableCredits} credits\n\nPlease select a cheaper player or remove other players to free up credits.`,
+          [{ text: 'OK' }]
+        );
+        return;
+      }
+      
       setPlayerToPosition(params.position as any, player);
       router.back();
     } else {
