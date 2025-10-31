@@ -96,72 +96,84 @@ export default function TeamBuilder() {
               <View style={styles.courtRow}>
                 {/* OH - Outside Hitter */}
                 <View style={styles.courtPosition}>
-                  {lineup.outsideHitter?.imageBase64 ? (
-                    <Image
-                      source={{ uri: `data:image/jpeg;base64,${lineup.outsideHitter.imageBase64}` }}
-                      style={styles.courtPlayerImage}
-                    />
-                  ) : (
-                    <Text style={styles.positionDot}>OH</Text>
-                  )}
+                  <View style={styles.jersey}>
+                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyBody}>
+                      {lineup.outsideHitter ? (
+                        <Text style={styles.jerseyNumber}>{lineup.outsideHitter.jerseyNumber}</Text>
+                      ) : (
+                        <Text style={styles.jerseyLabel}>OH</Text>
+                      )}
+                    </View>
+                  </View>
                 </View>
                 {/* MB - Middle Blocker */}
                 <View style={styles.courtPosition}>
-                  {lineup.middleBlocker?.imageBase64 ? (
-                    <Image
-                      source={{ uri: `data:image/jpeg;base64,${lineup.middleBlocker.imageBase64}` }}
-                      style={styles.courtPlayerImage}
-                    />
-                  ) : (
-                    <Text style={styles.positionDot}>MB</Text>
-                  )}
+                  <View style={styles.jersey}>
+                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyBody}>
+                      {lineup.middleBlocker ? (
+                        <Text style={styles.jerseyNumber}>{lineup.middleBlocker.jerseyNumber}</Text>
+                      ) : (
+                        <Text style={styles.jerseyLabel}>MB</Text>
+                      )}
+                    </View>
+                  </View>
                 </View>
                 {/* OPP - Opposite Hitter */}
                 <View style={styles.courtPosition}>
-                  {lineup.oppositeHitter?.imageBase64 ? (
-                    <Image
-                      source={{ uri: `data:image/jpeg;base64,${lineup.oppositeHitter.imageBase64}` }}
-                      style={styles.courtPlayerImage}
-                    />
-                  ) : (
-                    <Text style={styles.positionDot}>OPP</Text>
-                  )}
+                  <View style={styles.jersey}>
+                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyBody}>
+                      {lineup.oppositeHitter ? (
+                        <Text style={styles.jerseyNumber}>{lineup.oppositeHitter.jerseyNumber}</Text>
+                      ) : (
+                        <Text style={styles.jerseyLabel}>OPP</Text>
+                      )}
+                    </View>
+                  </View>
                 </View>
               </View>
               {/* Back row */}
               <View style={styles.courtRow}>
                 {/* L - Libero */}
                 <View style={styles.courtPosition}>
-                  {lineup.libero?.imageBase64 ? (
-                    <Image
-                      source={{ uri: `data:image/jpeg;base64,${lineup.libero.imageBase64}` }}
-                      style={styles.courtPlayerImage}
-                    />
-                  ) : (
-                    <Text style={styles.positionDot}>L</Text>
-                  )}
+                  <View style={styles.jersey}>
+                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyBody}>
+                      {lineup.libero ? (
+                        <Text style={styles.jerseyNumber}>{lineup.libero.jerseyNumber}</Text>
+                      ) : (
+                        <Text style={styles.jerseyLabel}>L</Text>
+                      )}
+                    </View>
+                  </View>
                 </View>
                 {/* S - Setter */}
                 <View style={styles.courtPosition}>
-                  {lineup.setter?.imageBase64 ? (
-                    <Image
-                      source={{ uri: `data:image/jpeg;base64,${lineup.setter.imageBase64}` }}
-                      style={styles.courtPlayerImage}
-                    />
-                  ) : (
-                    <Text style={styles.positionDot}>S</Text>
-                  )}
+                  <View style={styles.jersey}>
+                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyBody}>
+                      {lineup.setter ? (
+                        <Text style={styles.jerseyNumber}>{lineup.setter.jerseyNumber}</Text>
+                      ) : (
+                        <Text style={styles.jerseyLabel}>S</Text>
+                      )}
+                    </View>
+                  </View>
                 </View>
                 {/* DS - Defensive Specialist */}
                 <View style={styles.courtPosition}>
-                  {lineup.defensiveSpecialist?.imageBase64 ? (
-                    <Image
-                      source={{ uri: `data:image/jpeg;base64,${lineup.defensiveSpecialist.imageBase64}` }}
-                      style={styles.courtPlayerImage}
-                    />
-                  ) : (
-                    <Text style={styles.positionDot}>DS</Text>
-                  )}
+                  <View style={styles.jersey}>
+                    <View style={styles.jerseyNeck} />
+                    <View style={styles.jerseyBody}>
+                      {lineup.defensiveSpecialist ? (
+                        <Text style={styles.jerseyNumber}>{lineup.defensiveSpecialist.jerseyNumber}</Text>
+                      ) : (
+                        <Text style={styles.jerseyLabel}>DS</Text>
+                      )}
+                    </View>
+                  </View>
                 </View>
               </View>
             </View>
