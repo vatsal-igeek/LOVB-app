@@ -367,6 +367,12 @@ const styles = StyleSheet.create({
     borderColor: '#F97316',
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
+  },
+  courtPlayerImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
   },
   positionDot: {
     fontSize: 14,
