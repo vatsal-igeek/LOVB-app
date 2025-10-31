@@ -56,9 +56,9 @@ export default function Home() {
             <View style={styles.infoContent}>
               <Text style={styles.infoTitle}>How to Play</Text>
               <Text style={styles.infoText}>
-                • Select 6 players (1 per position){'\n'}
-                • Stay within 100 credit budget{'\n'}
-                • Build the ultimate volleyball team!
+                Select 6 players (1 per position).{'\n'}
+                Stay within 100 credit budget.{'\n'}
+                Build the ultimate volleyball team!
               </Text>
             </View>
           </View>
