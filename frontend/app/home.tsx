@@ -27,7 +27,7 @@ export default function Home() {
           <Text style={styles.userName}>{user?.name}!</Text>
         </View>
         <TouchableOpacity onPress={handleSignOut} style={styles.logoutButton}>
-          <Ionicons name="log-out-outline" size={24} color="#F97316" />
+          <Text style={styles.logoutText}>⏻</Text>
         </TouchableOpacity>
       </View>
 
