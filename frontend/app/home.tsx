@@ -51,7 +51,7 @@ export default function Home() {
           </TouchableOpacity>
 
           <View style={styles.infoCard}>
-            <Ionicons name="information-circle" size={24} color="#60A5FA" />
+            <Text style={styles.infoIcon}>ℹ️</Text>
             <View style={styles.infoContent}>
               <Text style={styles.infoTitle}>How to Play</Text>
               <Text style={styles.infoText}>
