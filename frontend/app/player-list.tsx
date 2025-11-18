@@ -15,7 +15,6 @@ import {
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useAuth } from '../contexts/AuthContext';
 import { Player, useTeam } from '../contexts/TeamContext';
-import { Ionicons } from '@expo/vector-icons';
 
 export default function PlayerList() {
   const router = useRouter();
