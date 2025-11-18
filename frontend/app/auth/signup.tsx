@@ -50,14 +50,14 @@ export default function SignUp() {
     >
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View style={styles.header}>
-          <Ionicons name="basketball" size={60} color="#F97316" />
+          <Text style={styles.logo}>🏐</Text>
           <Text style={styles.title}>LOVB</Text>
           <Text style={styles.subtitle}>Create Your Account</Text>
         </View>
 
         <View style={styles.form}>
           <View style={styles.inputContainer}>
-            <Ionicons name="person-outline" size={20} color="#94A3B8" style={styles.inputIcon} />
+            <Text style={styles.inputIcon}>👤</Text>
             <TextInput
               style={styles.input}
               placeholder="Full Name"
@@ -68,7 +68,7 @@ export default function SignUp() {
           </View>
 
           <View style={styles.inputContainer}>
-            <Ionicons name="mail-outline" size={20} color="#94A3B8" style={styles.inputIcon} />
+            <Text style={styles.inputIcon}>📧</Text>
             <TextInput
               style={styles.input}
               placeholder="Email"
@@ -81,7 +81,7 @@ export default function SignUp() {
           </View>
 
           <View style={styles.inputContainer}>
-            <Ionicons name="lock-closed-outline" size={20} color="#94A3B8" style={styles.inputIcon} />
+            <Text style={styles.inputIcon}>🔒</Text>
             <TextInput
               style={styles.input}
               placeholder="Password (min 6 characters)"
