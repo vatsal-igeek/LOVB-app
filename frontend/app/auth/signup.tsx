@@ -125,6 +125,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 48,
   },
+  logo: {
+    fontSize: 60,
+  },
   title: {
     fontSize: 48,
     fontWeight: 'bold',
