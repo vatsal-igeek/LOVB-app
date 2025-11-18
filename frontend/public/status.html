@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVB App Status</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #0A0E27;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #F97316;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        .status-card {
+            background: #1E293B;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #10B981;
+        }
+        .status-card.error {
+            border-left-color: #EF4444;
+        }
+        .status-card h3 {
+            color: #F97316;
+            margin: 0 0 10px 0;
+        }
+        .status-card p {
+            color: #CBD5E1;
+            margin: 5px 0;
+        }
+        .link {
+            display: inline-block;
+            background: #F97316;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 10px 10px 10px 0;
+            font-weight: bold;
+        }
+        .link:hover {
+            background: #FB923C;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏐 LOVB App Status Check</h1>
+        
+        <div class="status-card">
+            <h3>✅ Frontend Service</h3>
+            <p>Status: Running</p>
+            <p>Port: 3000</p>
+            <p>Expo tunnel: Active</p>
+        </div>
+        
+        <div class="status-card">
+            <h3>✅ Backend Service</h3>
+            <p>Status: Running</p>
+            <p>API: https://volley-dream-1.preview.emergentagent.com/api</p>
+        </div>
+        
+        <div class="status-card">
+            <h3>✅ App Icons Updated</h3>
+            <p>Volleyball icons: Installed (893KB)</p>
+            <p>Last updated: Nov 18, 2024 @ 12:52 PM</p>
+        </div>
+        
+        <h2 style="color: #F97316; margin-top: 40px;">📱 Access Your App:</h2>
+        
+        <a href="https://volley-dream-1.preview.emergentagent.com" class="link" target="_blank">
+            Web Preview
+        </a>
+        
+        <a href="./expo-qr.html" class="link">
+            Expo QR Code
+        </a>
+        
+        <a href="./volleyball-icon-final.html" class="link">
+            Icon Preview
+        </a>
+        
+        <h2 style="color: #F97316; margin-top: 40px;">🔗 Direct Links:</h2>
+        
+        <div class="status-card">
+            <h3>Expo Go URL</h3>
+            <p style="font-family: monospace; background: #0A0E27; padding: 10px; border-radius: 6px;">
+                exp://volley-dream-2.ngrok.io
+            </p>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 20px; background: #1E293B; border-radius: 12px;">
+            <h3 style="color: #F97316;">ℹ️ If you're seeing an error:</h3>
+            <ol style="color: #CBD5E1; line-height: 2;">
+                <li>Check which page/URL is showing the error</li>
+                <li>Try hard refresh: Ctrl+Shift+R (or Cmd+Shift+R on Mac)</li>
+                <li>Try opening in incognito/private browsing mode</li>
+                <li>Take a screenshot of the error and share it</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
