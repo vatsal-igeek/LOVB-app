@@ -172,4 +172,20 @@ const styles = StyleSheet.create({
     color: '#94A3B8',
     lineHeight: 20,
   },
+  logoutText: {
+    fontSize: 24,
+    color: '#F97316',
+  },
+  logoIcon: {
+    fontSize: 80,
+    color: '#F97316',
+  },
+  buttonIcon: {
+    fontSize: 32,
+    color: '#FFFFFF',
+  },
+  infoIcon: {
+    fontSize: 24,
+    color: '#60A5FA',
+  },
 });
