@@ -33,7 +33,7 @@ export default function Home() {
 
       <View style={styles.content}>
         <View style={styles.logoContainer}>
-          <Ionicons name="basketball" size={80} color="#F97316" />
+          <Text style={styles.logoIcon}>🏐</Text>
           <Text style={styles.title}>LOVB</Text>
           <Text style={styles.tagline}>Fantasy Volleyball League</Text>
         </View>
