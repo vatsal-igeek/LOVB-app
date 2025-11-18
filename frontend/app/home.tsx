@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../contexts/AuthContext';
-import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Home() {
