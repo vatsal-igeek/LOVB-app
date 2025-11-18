@@ -44,7 +44,7 @@ export default function Home() {
             onPress={() => router.push('/team-builder')}
           >
             <View style={styles.buttonContent}>
-              <Ionicons name="people" size={32} color="#FFFFFF" />
+              <Text style={styles.buttonIcon}>👥</Text>
               <Text style={styles.primaryButtonText}>Build Your Team</Text>
               <Text style={styles.primaryButtonSubtext}>Create your dream lineup</Text>
             </View>
