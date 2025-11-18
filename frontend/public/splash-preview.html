@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVB Splash Screen Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0A0E27;
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-align: center;
+            background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #94A3B8;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .preview-card {
+            background: #1E293B;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border: 2px solid #334155;
+        }
+        .phone-mockup {
+            background: #0A0E27;
+            border-radius: 40px;
+            padding: 60px 30px;
+            margin: 20px auto;
+            max-width: 300px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8),
+                        0 0 0 10px #1E293B,
+                        0 0 0 12px #F97316;
+            position: relative;
+        }
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 6px;
+            background: #334155;
+            border-radius: 3px;
+        }
+        .splash-content {
+            text-align: center;
+        }
+        .volleyball-icon {
+            width: 150px;
+            height: 150px;
+            margin: 40px auto 30px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .app-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin: 20px 0 10px;
+            letter-spacing: 4px;
+        }
+        .app-subtitle {
+            font-size: 18px;
+            color: #94A3B8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #F97316;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .comparison {
+            background: #0A0E27;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+            border-left: 4px solid #F97316;
+        }
+        .comparison h2 {
+            font-size: 24px;
+            color: #F97316;
+            margin-bottom: 20px;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .comparison-item {
+            text-align: center;
+            padding: 20px;
+            background: #1E293B;
+            border-radius: 12px;
+        }
+        .comparison-item img {
+            width: 120px;
+            height: 120px;
+            margin: 20px auto;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .old-label {
+            color: #EF4444;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .new-label {
+            color: #10B981;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .badge {
+            display: inline-block;
+            background: #F97316;
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .success-badge {
+            background: #10B981;
+        }
+        .instructions {
+            background: #1E293B;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .instructions h3 {
+            color: #F97316;
+            margin-bottom: 16px;
+        }
+        .instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .instructions li {
+            padding: 12px 0;
+            border-bottom: 1px solid #334155;
+            color: #CBD5E1;
+        }
+        .instructions li:before {
+            content: "✓ ";
+            color: #10B981;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏐 LOVB Splash Screen</h1>
+        <p class="subtitle">Updated with Volleyball Icon</p>
+        
+        <div class="badges">
+            <span class="badge success-badge">Updated</span>
+            <span class="badge">Orange Volleyball</span>
+            <span class="badge">Dark Theme</span>
+        </div>
+        
+        <div class="preview-grid">
+            <div class="preview-card">
+                <h3 style="color: #F97316; margin-bottom: 20px;">📱 Phone Preview</h3>
+                <div class="phone-mockup">
+                    <div class="splash-content">
+                        <img src="../assets/images/splash-icon.png" class="volleyball-icon" alt="Volleyball">
+                        <div class="app-title">LOVB</div>
+                        <div class="app-subtitle">Fantasy Volleyball</div>
+                    </div>
+                </div>
+                <div class="label">What users see on app launch</div>
+            </div>
+            
+            <div class="preview-card">
+                <h3 style="color: #F97316; margin-bottom: 20px;">🎨 Icon Details</h3>
+                <div style="padding: 40px;">
+                    <img src="../assets/images/splash-icon.png" style="width: 200px; height: 200px; border-radius: 20px; box-shadow: 0 20px 40px rgba(249, 115, 22, 0.5);" alt="Splash Icon">
+                </div>
+                <div style="text-align: left; padding: 20px; background: #0A0E27; border-radius: 12px; margin-top: 20px;">
+                    <p style="color: #CBD5E1; margin-bottom: 12px;"><strong style="color: #F97316;">Color:</strong> Orange (#F97316)</p>
+                    <p style="color: #CBD5E1; margin-bottom: 12px;"><strong style="color: #F97316;">Style:</strong> Volleyball with panel lines</p>
+                    <p style="color: #CBD5E1; margin-bottom: 12px;"><strong style="color: #F97316;">Size:</strong> 400x400px</p>
+                    <p style="color: #CBD5E1;"><strong style="color: #F97316;">Background:</strong> Dark (#0A0E27)</p>
+                </div>
+                <div class="label">Splash Icon Specifications</div>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h2>Before & After</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div style="font-size: 80px; margin: 20px 0;">🏀</div>
+                    <div class="old-label">❌ Before</div>
+                    <p style="color: #94A3B8; font-size: 14px; margin-top: 8px;">
+                        Basketball icon<br>
+                        (Wrong sport!)
+                    </p>
+                </div>
+                <div class="comparison-item">
+                    <img src="../assets/images/splash-icon.png" alt="New Volleyball Icon">
+                    <div class="new-label">✅ After</div>
+                    <p style="color: #94A3B8; font-size: 14px; margin-top: 8px;">
+                        Volleyball icon<br>
+                        Orange with dark lines
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>🔄 How to See the Update</h3>
+            <ul>
+                <li>Close Expo Go app completely (force quit)</li>
+                <li>Clear app cache or reinstall Expo Go</li>
+                <li>Rescan QR code from expo-qr.html page</li>
+                <li>New volleyball splash screen will appear on app load</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Add cache-busting to images
+        const timestamp = new Date().getTime();
+        document.querySelectorAll('img').forEach(img => {
+            if (img.src.includes('assets')) {
+                const src = img.src.split('?')[0];
+                img.src = src + '?v=' + timestamp;
+            }
+        });
+    </script>
+</body>
+</html>
