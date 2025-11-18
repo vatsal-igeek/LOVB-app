@@ -14,7 +14,6 @@ import {
 import { useRouter } from 'expo-router';
 import { useAuth } from '../contexts/AuthContext';
 import { Player, useTeam } from '../contexts/TeamContext';
-import { Ionicons } from '@expo/vector-icons';
 
 type PositionKey = 'setter' | 'outsideHitter' | 'oppositeHitter' | 'middleBlocker' | 'libero' | 'defensiveSpecialist';
 
