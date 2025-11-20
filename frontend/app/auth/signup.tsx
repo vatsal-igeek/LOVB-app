@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -9,35 +9,36 @@ import {
   Platform,
   ScrollView,
   Alert,
-} from 'react-native';
-import { useRouter } from 'expo-router';
-import { useAuth } from '../../contexts/AuthContext';
+} from "react-native";
+import { useRouter } from "expo-router";
+import { useAuth } from "../../contexts/AuthContext";
+import { FontAwesome6, Ionicons } from "@expo/vector-icons";
 
 export default function SignUp() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { signUp } = useAuth();
   const router = useRouter();
 
   const handleSignUp = async () => {
     if (!name || !email || !password) {
-      Alert.alert('Error', 'Please fill in all fields');
+      Alert.alert("Error", "Please fill in all fields");
       return;
     }
 
     if (password.length < 6) {
-      Alert.alert('Error', 'Password must be at least 6 characters');
+      Alert.alert("Error", "Password must be at least 6 characters");
       return;
     }
 
     setLoading(true);
     try {
       await signUp(email, password, name);
-      router.replace('/home');
+      router.replace("/home");
     } catch (error: any) {
-      Alert.alert('Sign Up Failed', error.message);
+      Alert.alert("Sign Up Failed", error.message);
     } finally {
       setLoading(false);
     }
@@ -45,19 +46,24 @@ export default function SignUp() {
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
     >
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View style={styles.header}>
-          <Text style={styles.logo}>🏐</Text>
+          <FontAwesome6 name="volleyball" size={60} color="#F97316" />
           <Text style={styles.title}>LOVB</Text>
           <Text style={styles.subtitle}>Create Your Account</Text>
         </View>
 
         <View style={styles.form}>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputIcon}>👤</Text>
+            <Ionicons
+              name="person-outline"
+              size={20}
+              color="#94A3B8"
+              style={styles.inputIcon}
+            />
             <TextInput
               style={styles.input}
               placeholder="Full Name"
@@ -68,7 +74,12 @@ export default function SignUp() {
           </View>
 
           <View style={styles.inputContainer}>
-            <Text style={styles.inputIcon}>📧</Text>
+            <Ionicons
+              name="mail-outline"
+              size={20}
+              color="#94A3B8"
+              style={styles.inputIcon}
+            />
             <TextInput
               style={styles.input}
               placeholder="Email"
@@ -81,7 +92,12 @@ export default function SignUp() {
           </View>
 
           <View style={styles.inputContainer}>
-            <Text style={styles.inputIcon}>🔒</Text>
+            <Ionicons
+              name="lock-closed-outline"
+              size={20}
+              color="#94A3B8"
+              style={styles.inputIcon}
+            />
             <TextInput
               style={styles.input}
               placeholder="Password (min 6 characters)"
@@ -97,12 +113,15 @@ export default function SignUp() {
             onPress={handleSignUp}
             disabled={loading}
           >
-            <Text style={styles.buttonText}>{loading ? 'Creating Account...' : 'Sign Up'}</Text>
+            <Text style={styles.buttonText}>
+              {loading ? "Creating Account..." : "Sign Up"}
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => router.back()}>
             <Text style={styles.linkText}>
-              Already have an account? <Text style={styles.linkTextBold}>Sign In</Text>
+              Already have an account?{" "}
+              <Text style={styles.linkTextBold}>Sign In</Text>
             </Text>
           </TouchableOpacity>
         </View>
@@ -114,44 +133,41 @@ export default function SignUp() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A0E27',
+    backgroundColor: "#0A0E27",
   },
   scrollContent: {
     flexGrow: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
     padding: 24,
   },
   header: {
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 48,
-  },
-  logo: {
-    fontSize: 60,
   },
   title: {
     fontSize: 48,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
+    fontWeight: "bold",
+    color: "#FFFFFF",
     marginTop: 16,
     letterSpacing: 2,
   },
   subtitle: {
     fontSize: 18,
-    color: '#94A3B8',
+    color: "#94A3B8",
     marginTop: 8,
   },
   form: {
-    width: '100%',
+    width: "100%",
   },
   inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#1E293B',
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#1E293B",
     borderRadius: 12,
     marginBottom: 16,
     paddingHorizontal: 16,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: "#334155",
   },
   inputIcon: {
     marginRight: 12,
@@ -159,17 +175,17 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 56,
-    color: '#FFFFFF',
+    color: "#FFFFFF",
     fontSize: 16,
   },
   button: {
-    backgroundColor: '#F97316',
+    backgroundColor: "#F97316",
     borderRadius: 12,
     height: 56,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 8,
-    shadowColor: '#F97316',
+    shadowColor: "#F97316",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
@@ -179,18 +195,18 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: "#FFFFFF",
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   linkText: {
-    textAlign: 'center',
-    color: '#94A3B8',
+    textAlign: "center",
+    color: "#94A3B8",
     marginTop: 24,
     fontSize: 14,
   },
   linkTextBold: {
-    color: '#F97316',
-    fontWeight: 'bold',
+    color: "#F97316",
+    fontWeight: "bold",
   },
 });

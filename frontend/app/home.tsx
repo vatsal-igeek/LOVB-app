@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   StyleSheet,
   SafeAreaView,
-} from 'react-native';
-import { useRouter } from 'expo-router';
-import { useAuth } from '../contexts/AuthContext';
-import { LinearGradient } from 'expo-linear-gradient';
+} from "react-native";
+import { useRouter } from "expo-router";
+import { useAuth } from "../contexts/AuthContext";
+import { FontAwesome6, Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Home() {
   const { user, signOut } = useAuth();
@@ -16,10 +17,8 @@ export default function Home() {
 
   const handleSignOut = async () => {
     await signOut();
-    router.replace('/auth/signin');
+    router.replace("/auth/signin");
   };
-
-  console.log('test =====');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -29,13 +28,13 @@ export default function Home() {
           <Text style={styles.userName}>{user?.name}!</Text>
         </View>
         <TouchableOpacity onPress={handleSignOut} style={styles.logoutButton}>
-          <Text style={styles.logoutText}>⏻</Text>
+          <Ionicons name="log-out-outline" size={24} color="#F97316" />
         </TouchableOpacity>
       </View>
 
       <View style={styles.content}>
         <View style={styles.logoContainer}>
-          <Text style={styles.logoIcon}>🏐</Text>
+          <FontAwesome6 name="volleyball" size={80} color="#F97316" />
           <Text style={styles.title}>LOVB</Text>
           <Text style={styles.tagline}>Fantasy Volleyball League</Text>
         </View>
@@ -43,22 +42,24 @@ export default function Home() {
         <View style={styles.ctaContainer}>
           <TouchableOpacity
             style={styles.primaryButton}
-            onPress={() => router.push('/team-builder')}
+            onPress={() => router.push("/team-builder")}
           >
             <View style={styles.buttonContent}>
-              <Text style={styles.buttonIcon}>👥</Text>
+              <Ionicons name="people" size={32} color="#FFFFFF" />
               <Text style={styles.primaryButtonText}>Build Your Team</Text>
-              <Text style={styles.primaryButtonSubtext}>Create your dream lineup</Text>
+              <Text style={styles.primaryButtonSubtext}>
+                Create your dream lineup
+              </Text>
             </View>
           </TouchableOpacity>
 
           <View style={styles.infoCard}>
-            <Text style={styles.infoIcon}>ℹ️</Text>
+            <Ionicons name="information-circle" size={24} color="#60A5FA" />
             <View style={styles.infoContent}>
               <Text style={styles.infoTitle}>How to Play</Text>
               <Text style={styles.infoText}>
-                Select 6 players (1 per position).{'\n'}
-                Stay within 100 credit budget.{'\n'}
+                Select 6 players (1 per position).{"\n"}
+                Stay within 100 credit budget.{"\n"}
                 Build the ultimate volleyball team!
               </Text>
             </View>
@@ -72,92 +73,92 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A0E27',
+    backgroundColor: "#0A0E27",
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 24,
     paddingTop: 16,
     paddingBottom: 24,
   },
   welcome: {
     fontSize: 16,
-    color: '#94A3B8',
+    color: "#94A3B8",
   },
   userName: {
     fontSize: 24,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
+    fontWeight: "bold",
+    color: "#FFFFFF",
     marginTop: 4,
   },
   logoutButton: {
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#1E293B',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#1E293B",
+    justifyContent: "center",
+    alignItems: "center",
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: "#334155",
   },
   content: {
     flex: 1,
     paddingHorizontal: 24,
   },
   logoContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 32,
     marginBottom: 48,
   },
   title: {
     fontSize: 56,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
+    fontWeight: "bold",
+    color: "#FFFFFF",
     marginTop: 16,
     letterSpacing: 4,
   },
   tagline: {
     fontSize: 18,
-    color: '#94A3B8',
+    color: "#94A3B8",
     marginTop: 8,
   },
   ctaContainer: {
     gap: 24,
   },
   primaryButton: {
-    backgroundColor: '#F97316',
+    backgroundColor: "#F97316",
     borderRadius: 20,
     padding: 32,
-    shadowColor: '#F97316',
+    shadowColor: "#F97316",
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.4,
     shadowRadius: 12,
     elevation: 8,
   },
   buttonContent: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   primaryButtonText: {
     fontSize: 24,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
+    fontWeight: "bold",
+    color: "#FFFFFF",
     marginTop: 12,
   },
   primaryButtonSubtext: {
     fontSize: 14,
-    color: '#FFF',
+    color: "#FFF",
     opacity: 0.8,
     marginTop: 4,
   },
   infoCard: {
-    backgroundColor: '#1E293B',
+    backgroundColor: "#1E293B",
     borderRadius: 16,
     padding: 20,
-    flexDirection: 'row',
+    flexDirection: "row",
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: "#334155",
   },
   infoContent: {
     flex: 1,
@@ -165,29 +166,13 @@ const styles = StyleSheet.create({
   },
   infoTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
+    fontWeight: "bold",
+    color: "#FFFFFF",
     marginBottom: 8,
   },
   infoText: {
     fontSize: 14,
-    color: '#94A3B8',
+    color: "#94A3B8",
     lineHeight: 20,
-  },
-  logoutText: {
-    fontSize: 24,
-    color: '#F97316',
-  },
-  logoIcon: {
-    fontSize: 80,
-    color: '#F97316',
-  },
-  buttonIcon: {
-    fontSize: 32,
-    color: '#FFFFFF',
-  },
-  infoIcon: {
-    fontSize: 24,
-    color: '#60A5FA',
   },
 });

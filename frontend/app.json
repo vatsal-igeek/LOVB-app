@@ -1,22 +1,20 @@
 {
   "expo": {
-    "name": "LOVB Fantasy Volleyball",
-    "slug": "lovb-fantasy-volleyball",
+    "name": "frontend",
+    "slug": "frontend",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "lovb",
+    "scheme": "frontend",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.lovb.fantasytvolleyball"
+      "supportsTablet": true
     },
     "android": {
-      "package": "com.lovb.fantasyvolleyball",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#0A0E27"
+        "backgroundColor": "#000"
       },
       "edgeToEdgeEnabled": true
     },
@@ -33,15 +31,10 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#0A0E27"
+          "backgroundColor": "#000"
         }
       ]
     ],
-    "splash": {
-      "image": "./assets/images/splash-image.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#0A0E27"
-    },
     "experiments": {
       "typedRoutes": true
     }
