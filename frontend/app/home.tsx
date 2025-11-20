@@ -19,6 +19,8 @@ export default function Home() {
     router.replace('/auth/signin');
   };
 
+  console.log('test =====');
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
